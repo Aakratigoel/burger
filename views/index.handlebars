@@ -1,0 +1,36 @@
+<h1>Burgers!</h1>
+
+<ul>
+  {{!-- #each is a handlebars method that allows us to iterate over an array the same way we would do it with a standard for loop in javascript --}}
+  {{#each burgers}}
+  {{!-- if sleepy is false --}}
+    {{#unless devour}}
+    
+      {{ }}     
+    {{/unless}}
+  {{/each}}
+</ul>
+
+
+
+<ul>
+  {{#each cats}}
+  {{!-- if sleepy is true --}}
+    {{#if sleepy}}
+      
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ba">Burger Name:</label>
+    <input type="text" id="ba" name="name">
+  </div>
+
+  <button type="button">Devour It!!</button>
+
+  <button type="submit">Add a Burger</button>
+</form>
