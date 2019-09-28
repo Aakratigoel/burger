@@ -11,6 +11,7 @@ router.get("/", function(req, res) {
         burgers: data
       };
       console.table(data)
+      console.log(hbsObject);
       // express knows to look for index.handlers because the view engine is set to .handlebar files
       // when sending data back to a .handlebars file, we need to send it back as an object
       res.render("index", hbsObject);
@@ -19,9 +20,9 @@ router.get("/", function(req, res) {
   
   router.post("/api/burgers", function(req, res) {
     burger.create([
-      "name", "devour"
+      "Burger_Name", "Devoured"
     ], [
-      req.body.name, req.body.devour
+      req.body.Burger_Name, req.body.Devoured
     ], function(result) {
       res.json(true);
     });
@@ -33,7 +34,7 @@ router.get("/", function(req, res) {
     console.log("condition", condition);
   
     burger.update({
-      devour: req.body.devour
+      Devoured: req.body.Devoured
     }, condition, function(result) {
       if (result.changedRows == 0) {
         // If no rows were changed, then the ID must not exist, so 404
